@@ -1,5 +1,6 @@
 (ns aoc2015.core
   (:require aoc2015.day1 
+            aoc2015.day2
             clojure.string)
   (:gen-class))
 
