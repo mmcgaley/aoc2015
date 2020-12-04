@@ -19,7 +19,7 @@
 
 (defn main
   "Day 2 of Advent of Code 2015: I Was Told There Would Be No Math
-      lein run day1 <input>
+      lein run day2 <input>
    where <input> is a filename in project resources/"
   [[filename]]
   (let [lines (util/read-lines filename)

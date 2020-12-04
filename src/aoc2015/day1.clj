@@ -23,4 +23,5 @@
     (println "Floor reached:" (last directions))
     (println "First basement index:" (->> directions
                                           (take-while #(>= % 0))
-                                          (count)k))))
+                                          (count)
+                                          ))))
