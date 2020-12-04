@@ -6,7 +6,8 @@
   [floors direction]
   (cond
     (= direction \() (conj floors (inc (last floors)))
-    (= direction \)) (conj floors (dec (last floors)))))
+    (= direction \)) (conj floors (dec (last floors)))
+    :else floors))
 
 (defn floor-directions
   "Read input to determine Santa's directions"
@@ -23,5 +24,4 @@
     (println "Floor reached:" (last directions))
     (println "First basement index:" (->> directions
                                           (take-while #(>= % 0))
-                                          (count)
-                                          ))))
+                                          (count)))))
