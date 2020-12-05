@@ -14,11 +14,8 @@
   "Parse an instruction of the form
   [turn on / turn off / toggle] x1,y1 through x2,y2"
   [lights instr]
-  (let [[_ instr-type x1 y1 x2 y2] (re-matches #"(.+) (\d+),(\d+) through (\d+),(\d+)" instr)
-        x1 (Integer/parseInt x1)
-        y1 (Integer/parseInt y1)
-        x2 (Integer/parseInt x2)
-        y2 (Integer/parseInt y2)
+  (let [[_ instr-type & args] (re-matches #"(.+) (\d+),(\d+) through (\d+),(\d+)" instr)
+        [x1 y1 x2 y2] (map #(Integer/parseInt %) args)
         op ({"turn on" (fn [lights [from to]] (.set lights from to))
              "turn off" (fn [lights [from to]] (.clear lights from to))
              "toggle" (fn [lights [from to]] (.flip lights from to))} instr-type)]
@@ -36,11 +33,8 @@
   "Parse an instruction of the form
   [turn on / turn off / toggle] x1,y1 through x2,y2"
   [lights instr]
-  (let [[_ instr-type x1 y1 x2 y2] (re-matches #"(.+) (\d+),(\d+) through (\d+),(\d+)" instr)
-        x1 (Integer/parseInt x1)
-        y1 (Integer/parseInt y1)
-        x2 (Integer/parseInt x2)
-        y2 (Integer/parseInt y2)
+  (let [[_ instr-type & args] (re-matches #"(.+) (\d+),(\d+) through (\d+),(\d+)" instr)
+        [x1 y1 x2 y2] (map #(Integer/parseInt %) args)
         op ({"turn on" (fn [lights [from to]] (modify-by 1 lights from to))
              "turn off" (fn [lights [from to]] (modify-by -1 lights from to))
              "toggle" (fn [lights [from to]] (modify-by 2 lights from to))} instr-type)]
