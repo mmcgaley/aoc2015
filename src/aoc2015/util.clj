@@ -19,3 +19,10 @@
   "Break up a line on commas"
   [line]
   (string/split (string/trim line) #","))
+
+(defn in? 
+  "Test if a is in coll"
+  [coll a] 
+  (some #(= a %) coll))
+
+(def not-nil? (complement nil?))
