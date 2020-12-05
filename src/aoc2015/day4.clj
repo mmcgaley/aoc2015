@@ -1,6 +1,5 @@
 (ns aoc2015.day4
-  (:require [aoc2015.util :as util]
-            [clojure.string :as s]
+  (:require [clojure.string :as s]
             [digest]))
 
 (defn test-one
