@@ -1,7 +1,6 @@
 (ns aoc2015.day5
   (:require [aoc2015.util :as util]
-            [clojure.string :as s]
-            [digest]))
+            [clojure.string :as s]))
 
 (defn is-nice1?
   "returns TRUE if line is nice FALSE if naughty

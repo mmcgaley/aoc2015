@@ -1,6 +1,5 @@
 (ns aoc2015.day6
-  (:require [aoc2015.util :as util]
-            [digest])
+  (:require [aoc2015.util :as util])
   ; https://docs.oracle.com/javase/7/docs/api/java/util/BitSet.html
   (:import java.util.BitSet))
 
