@@ -47,7 +47,7 @@
 
 (defn main
   "Day 7 of Advent of Code 2015: Some Assembly Required
-      lein run day7 <input>"
+      lein run day7split <input>"
   [[filename]]
   (let [input (util/read-lines filename)
         original-map (make-map input)
