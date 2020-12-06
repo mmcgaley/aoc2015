@@ -5,6 +5,7 @@
             aoc2015.day4
             aoc2015.day5
             aoc2015.day6
+            aoc2015.day7
             clojure.string)
   (:gen-class))
 
