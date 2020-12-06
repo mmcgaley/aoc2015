@@ -23,9 +23,22 @@
      wire = #'[a-z]+'
      number = #'[0-9]+'"))
 
+
+(defn transform-statement
+  ""
+  [statement]
+  [(last (last (last statement))) (rest (first statement))])
+
+(defn transform-instructions
+  "Transform parser output into a wire -> expression map"
+  [instructions]
+  (let [statements (map rest (rest instructions))
+        output-exprs (map transform-statement statements)]
+    (into {} output-exprs)))
+
 (defn main
   "Day 7 of Advent of Code 2015: Some Assembly Required
       lein run day7 <input>"
   [[filename]]
   (let [input (s/trim (util/slurp-resource filename))]
-    (pp/pprint (parse-instructions input))))
+    (pp/pprint (transform-instructions (parse-instructions input)))))
