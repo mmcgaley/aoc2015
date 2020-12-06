@@ -23,6 +23,15 @@
      wire = #'[a-z]+'
      number = #'[0-9]+'"))
 
+(defn calc
+  "recursively calculate the value associated with wire"
+  [wire]
+  ; find wire in map
+  ; foreach instruction that has an uncalc'ed wire, recursively run calc 
+  ; https://clojuredocs.org/clojure.core/recur
+  ; return op of values
+)
+
 (defn main
   "Day 7 of Advent of Code 2015: Some Assembly Required
       lein run day7 <input>"
