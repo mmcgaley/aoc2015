@@ -26,6 +26,7 @@
 (defn calc
   "recursively calculate the value associated with wire"
   [wire]
+  (find map wire)
   ; find wire in map
   ; foreach instruction that has an uncalc'ed wire, recursively run calc 
   ; https://clojuredocs.org/clojure.core/recur
