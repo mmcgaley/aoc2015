@@ -1,0 +1,4 @@
+lx -> a
+lw OR lv -> lx
+333 LSHIFT 1 -> lw
+1 AND 22 -> lv
