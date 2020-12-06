@@ -42,8 +42,8 @@
            :else (println instr)))))))
 
 (defn override
-  [input]
-  (assoc input "b" '("46065")))
+  [input original]
+  (assoc input "b" [(str original)]))
 
 (defn main
   "Day 7 of Advent of Code 2015: Some Assembly Required
@@ -51,7 +51,8 @@
   [[filename]]
   (let [input (util/read-lines filename)
         original-map (make-map input)
-        override-map (override original-map)]
-    (println "Original:" (calc original-map "a"))
+        original (calc original-map "a")
+        override-map (override original-map original)]
+    (println "Original:" original)
     (m/memo-clear! calc)
     (println "Override:" (calc override-map "a"))))
