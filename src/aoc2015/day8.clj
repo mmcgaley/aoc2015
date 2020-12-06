@@ -1,6 +1,5 @@
 (ns aoc2015.day8
-  (:require [aoc2015.util :as util]
-            [clojure.string :as s]))
+  (:require [aoc2015.util :as util]))
 
 (defn special-overhead
   [[_ s]]
